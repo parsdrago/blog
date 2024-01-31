@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ブログをウェブサイトにする静的サイトジェネレータ 3日目</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>ブログをウェブサイトにする静的サイトジェネレータ 3日目</h1>
+<p>１日時間があったので制作しました。とりあえず、変換するところはできたので、後日 GitHub actions などを設定の上、GitHub pages などにデプロイするように設定してみます。</p>
+<p>node.js で marked.js、highlight.js によって md ファイルの中身を に変換し、ejs によって html に埋め込む cli ツールとして作成しました。</p>
+<p>驚きや学びがあったのは、以下の点です。</p>
+<ol>
+<li>文字列の処理だけだと PC がめっちゃ速い</li>
+<li>node.js で cli ツールを初めて作ったが、取り立て問題なくできた</li>
+</ol>
+<h2>文字列の処理だけだと PC がめっちゃ速い</h2>
+<p>普段、数学的な重めの計算をするプログラムばかり作っています。そのせいで、たまに簡単な文字列の変換やそのファイル入出力だけを行うコードを書くと、処理が一瞬で終わって、速すぎてビビります。</p>
+<h2>node.js で cli ツールを初めて作ったが、取り立て問題なくできた</h2>
+<p>今回、試しに node.js で初めて cli ツールを作ってみました。今時、JavaScript でコードを書くなら deno や bun などがいいのかもしれないですが、npm のパッケージをいくつか使いたかったので node.js にしています。
+（最近は deno も npm のパッケージが使えるようになったと聞いていますが、変なところでハマるのがいやだったので避けました）
+初めてでしたが、複雑な処理を必要としないのもあり、難なく作ることができました。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>

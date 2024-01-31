@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft IME の辞書ファイルを SKK の辞書ファイルに変換できると便利</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>Microsoft IME の辞書ファイルを SKK の辞書ファイルに変換できると便利</h1>
+<p>普段、日本語入力には SKK を使っています。入力はとても快適なのですが、問題点として変換用の辞書が貧弱です。
+特に専門用語や顔文字などは入力が著しく困難です。</p>
+<p>これまではちまちまと辞書を自作して対応していたのですが、最近、よい解決方法を思い付きました。
+それは、タイトルにもある通り Microsoft IME 用の辞書を SKK 用に変換することです。</p>
+<p>Microsoft IME 用の辞書であれば、専門用語のものなどはググれば誰かが作ってくれたものが比較的すぐに見つかります。
+これを変換し取り込めば、SKK でも Microsoft IME と同じぐらい快適に辞書が追加できるという算段です。</p>
+<p>ChatGPT に変換用のスクリプトを書いてもらいました。</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">convert_to_skk</span>(<span class="hljs-params">input_file_path, output_file_path</span>):
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(input_file_path, <span class="hljs-string">'r'</span>, encoding=<span class="hljs-string">'utf-16le'</span>) <span class="hljs-keyword">as</span> infile, \
+             <span class="hljs-built_in">open</span>(output_file_path, <span class="hljs-string">'w'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> outfile:
+            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> infile:
+                parts = line.strip().split(<span class="hljs-string">'\t'</span>)
+                <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(parts) &gt;= <span class="hljs-number">2</span>:
+                    word, reading = parts[<span class="hljs-number">0</span>], parts[<span class="hljs-number">1</span>]
+                    <span class="hljs-comment"># 単語にスラッシュが含まれている場合はスキップ</span>
+                    <span class="hljs-keyword">if</span> <span class="hljs-string">'/'</span> <span class="hljs-keyword">in</span> word <span class="hljs-keyword">or</span> <span class="hljs-string">'/'</span> <span class="hljs-keyword">in</span> reading:
+                        <span class="hljs-keyword">continue</span>
+                    skk_line = <span class="hljs-string">f"<span class="hljs-subst">{word}</span> /<span class="hljs-subst">{reading}</span>/\n"</span>
+                    outfile.write(skk_line)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Conversion completed successfully."</span>)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f"An error occurred: <span class="hljs-subst">{e}</span>"</span>)
+
+<span class="hljs-comment"># 使用例</span>
+<span class="hljs-comment"># convert_to_skk('path_to_your_input_file.txt', 'path_to_your_output_file.txt')</span>
+</code></pre>
+<p>これまでに、顔文字や絵文字、仕事で扱う専門用語などに使っており。快適に変換できるようになりました。
+自分では試していないですが、Mozc 用の辞書も同じように変換できるようにすると、さらに便利になるかもしれないです。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>

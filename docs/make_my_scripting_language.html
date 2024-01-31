@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自作スクリプト言語を作る #1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>自作スクリプト言語を作る #1</h1>
+<p>昨日も書きましたが、自作言語のリポジトリたちをみていると自分でも何か作ってみたくなりました。
+これまでまともに言語処理系の実装をしたことがないので、いい機会かもしれないです。</p>
+<p>簡単に自分のやりたいことをできるスクリプト言語として考えてみます。</p>
+<p>たとえば次のように書きたいです。</p>
+<pre><code>for i in 1.<span class="hljs-string">.100</span>
+  url = http:<span class="hljs-string">//example.com/images/</span>{i}<span class="hljs-string">.png</span>
+  download from url to <span class="hljs-string">./</span>{i}<span class="hljs-string">.png</span>
+</code></pre>
+<pre><code><span class="hljs-keyword">if</span> length of params &lt; <span class="hljs-number">1</span>
+  show <span class="hljs-string">"issue id is missing"</span>
+  <span class="hljs-keyword">exit</span>
+
+issue_id = {params[<span class="hljs-number">1</span>]}
+open http:<span class="hljs-regexp">//my</span>-issue-management.local<span class="hljs-regexp">/isuues/</span>{issue_id}
+</code></pre>
+<p>さしあたっては、これをできる言語処理を作ってみようと思います。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>

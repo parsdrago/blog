@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bag of words の一致率の kNN によるテキスト分類</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>Bag of words の一致率の kNN によるテキスト分類</h1>
+<p>昨日は gzip + kNN でしたが、bow + knn や bow + LinearSVC でもBERTと同程度の精度が出るようです。
+<a href="https://arxiv.org/abs/2307.15002">Gzip versus bag-of-words for text classification</a></p>
+<p>このような簡単なものを組み合わせて、最近 (?) の LLM と張り合えるぐらいの結果が出せるのは面白いですね。</p>
+<p>業務だけを考えるとこのような手法には役割がないですが、この程度の手法であれば自分でも思いつけそうなので色々と試しに触ってみてもいいかもです。</p>
+<h2>アルファベットの頻度分布 + LinearSVC</h2>
+<p>というわけで、試しに一つ試してみました。</p>
+<ul>
+<li>訓練データ<ul>
+<li><a href="https://huggingface.co/datasets/ag_news">ag_news</a> を用いて、</li>
+</ul>
+</li>
+<li>前処理<ul>
+<li>アルファベット以外の文字の削除、小文字に変換</li>
+<li>各アルファベットの出現頻度のリストを正規化して利用する</li>
+</ul>
+</li>
+<li>学習とフィッティング<ul>
+<li>scikit-learn の LinearSVC で分類</li>
+</ul>
+</li>
+<li>結果<ul>
+<li>正解率　48.3 %</li>
+</ul>
+</li>
+</ul>
+<p>4 クラスの分類なのでランダムでは 25 % の正解率になり、今回の結果はそれよりも高そうです。
+先行研究ほどの正解率ではないですが、このような簡単な方法でも情報が引き出せているのは興味深いですね。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>

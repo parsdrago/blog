@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rows of String Values (RSV) というものを見つけた</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>Rows of String Values (RSV) というものを見つけた</h1>
+<p><a href="https://github.com/Stenway/RSV-Specification">Rows of String Values (RSV)</a> を見つけました。
+データを簡単に出力したいときに csv や tsv などを使いますが、これらの形式では区切り文字として使っているコンマやタブ、改行がデータ中に現れることがあり正しく処理するのが地味に面倒という特徴がありました。</p>
+<p>RSV は utf-8 の文字列では仕様上現れない値 (0xffや0xfe) を区切りの標識として使うことでこの問題を解決したフォーマットだそうです。
+データをコンパクトに表現できてよさげなフォーマットです。</p>
+<p>気になる点としては、csv や tsv とは違い、出力したファイル全体が utf-8 の文字列ではなくなっているので、テキストエディタ等で開けなくなっていることです。
+ファイルの構造が簡単なため簡単に読み書きできるツールが作れそうなので大した問題ではないかもしれないですが、地味な弱点になりそうです。</p>
+<p>単純に ascii の 0x1c - 0x1f までに入っているデータ区切り用の文字を使う方式ではダメなんでしょうか (話は逸れますが、csv や tsv が普及していてこれらの区切りでデータを表現するフォーマットが流行ってないのはなんでなんでしょう)</p>
+<p>個人的には様子見で動向を追っておこうと思いますが、発想は面白いフォーマットでした。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>スマートフォンで使いやすいプログラミング言語が欲しい</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>スマートフォンで使いやすいプログラミング言語が欲しい</h1>
+<p>通勤中などに電車の中でサッと簡単なコードを書きたくなることがあります。
+ただ、この用途で使いやすいプログラミング言語がないのでいいものがないか探しています。</p>
+<p>だいたい以下のような機能が欲しいです。</p>
+<ul>
+<li>スマホのソフトウェアキーボードで入力しやすい<ul>
+<li>記号が少ない &amp; 予測変換との相性がよい</li>
+</ul>
+</li>
+<li>狭い画面でも容易に把握しやすい</li>
+</ul>
+<p>これを ChatGPT に伝えて条件を満たすコードのサンプルを書いてもらいました。</p>
+<pre><code>function fibonacci <span class="hljs-built_in">number</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">number</span> <span class="hljs-keyword">less than</span> <span class="hljs-number">2</span>
+<span class="hljs-built_in">        return</span> <span class="hljs-built_in">number</span>
+    <span class="hljs-keyword">else</span>
+<span class="hljs-built_in">        return</span> fibonacci (<span class="hljs-built_in">number</span> minus <span class="hljs-number">1</span>) plus fibonacci (<span class="hljs-built_in">number</span> minus <span class="hljs-number">2</span>)
+
+max <span class="hljs-built_in">number</span> <span class="hljs-keyword">is</span> <span class="hljs-number">10</span>
+<span class="hljs-built_in">count</span> <span class="hljs-keyword">is</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">count</span> <span class="hljs-keyword">less than</span> max <span class="hljs-built_in">number</span>
+    print fibonacci <span class="hljs-built_in">count</span>
+    <span class="hljs-built_in">count</span> <span class="hljs-keyword">is</span> <span class="hljs-built_in">count</span> plus <span class="hljs-number">1</span>
+</code></pre>
+<p>いささか冗長な気もしますが、筋はいいかもしれないです。
+機会を見つけて処理系を作ってみたいです。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>gzip と kNN によるテキスト分類</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <html><head></head><body><h1>gzip と kNN によるテキスト分類</h1>
+<p>gzip と kNN によってテキスト分類が高い精度でできるという論文を見つけました。
+<a href="https://aclanthology.org/2023.findings-acl.426/https://aclanthology.org/2023.findings-acl.426/">“Low-Resource” Text Classification: A Parameter-Free Classification Method with Compressors
+</a></p>
+<p>テキスト a とテキスト b の gzip での圧縮率を$C(a)$ $C(b)$ としたときに、a と b の距離を</p>
+<p>$
+E(a, b) = \frac{C(ab) - min(C(a), C(b))}{max(C(a), C(b))}
+$</p>
+<p>で定義し、kNNにより分類するとよいようです。</p>
+<p>ただ、論文中の精度検証は間違っているという指摘もあり、実際の精度はそこまで高くないようです。
+<a href="https://kenschutte.com/gzip-knn-paper2/">"Gzip beats BERT?" Part 2: dataset issues, improved speed, and results
+</a></p>
+<p>いずれにしても、gzip の圧縮率だけからそこそこの精度で分類できるというアイデアはとてもよいと思いました。</p>
+</body></html>
+        <hr>
+        <footer>
+            <p><a href="index.html">index page</a></p>
+            <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+        </footer>
+</body>
+
+</html>
