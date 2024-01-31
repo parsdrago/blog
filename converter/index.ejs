@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>parsdrago - blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+</head>
+
+<body>
+    <h1>parsdrago - blog</h1>
+    <main>
+        <% for (let i=0; i < posts.length; i++) { %>
+            <div>
+                <h2><a href="<%= posts[i].id %>.html">
+                        <%= posts[i].title %>
+                    </a></h2>
+                <p>
+                    <%= posts[i].createdAt %>
+                </p>
+            </div>
+            <% } %>
+                <hr>
+                <footer>
+                    <p><a href="https://github.com/parsdrago/blog">GitHub Repository</a></p>
+                </footer>
+    </main>
+</body>
+
+</html>
